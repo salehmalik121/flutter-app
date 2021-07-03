@@ -4,10 +4,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
-class homePage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String name = " saleh ";
+    String name = "Saleh";
     return Scaffold(
       appBar: AppBar(),
       body: Center(
