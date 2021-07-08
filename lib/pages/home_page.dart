@@ -2,6 +2,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:learning/pages/widgets/drawer.dart';
 
 // ignore: camel_case_types
 class HomePage extends StatelessWidget {
@@ -9,7 +10,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     String name = "Saleh";
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Center(child: Text("Catalog App")),
+      ),
       body: Center(
         child: Text("1st App made by $name",
             style: TextStyle(
@@ -17,7 +20,7 @@ class HomePage extends StatelessWidget {
               color: Colors.blueAccent,
             )),
       ),
-      drawer: Drawer(),
+      drawer: Mydrawer(),
     );
   }
 }

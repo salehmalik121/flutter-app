@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
+import 'package:learning/pages/clone_page.dart';
+// ignore: unused_import
 import 'package:learning/pages/home_page.dart';
+// ignore: unused_import
 import 'package:learning/pages/login_page.dart';
-import 'package:google_fonts/google_fonts.dart';
+// ignore: unused_import
 import 'package:learning/pages/utis/routes.dart';
+import 'package:learning/pages/widgets/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,15 +19,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-        textTheme: GoogleFonts.robotoTextTheme(),
-      ),
+      theme: Mytheme.lighttheme(context),
       initialRoute: "/",
       routes: {
-        "/": (context) => LoginPage(),
+        "/": (context) => HomePage(),
         Myroutes.homeRoute: (context) => HomePage(),
         Myroutes.loginRoute: (context) => LoginPage(),
+        "clonePage": (context) => clonePage()
       },
     );
   }
