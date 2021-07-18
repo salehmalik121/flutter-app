@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
-import 'package:learning/pages/clone_page.dart';
+
 // ignore: unused_import
 import 'package:learning/pages/home_page.dart';
 // ignore: unused_import
@@ -8,6 +8,7 @@ import 'package:learning/pages/login_page.dart';
 // ignore: unused_import
 import 'package:learning/pages/utis/routes.dart';
 import 'package:learning/pages/widgets/theme.dart';
+import 'package:learning/test.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => HomePage(),
         Myroutes.homeRoute: (context) => HomePage(),
         Myroutes.loginRoute: (context) => LoginPage(),
-        "clonePage": (context) => clonePage()
+        "test": (context) => test(),
       },
     );
   }
