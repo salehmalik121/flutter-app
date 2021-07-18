@@ -120,51 +120,57 @@ class Catalogitem extends StatelessWidget {
         height: 200,
         child: Container(
           child: Row(children: [
-            Imageapp(image: catalog.image),
             Expanded(
+                flex: 5,
+                child: Imageapp(
+                  image: catalog.image,
+                )),
+            Expanded(
+                flex: 6,
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                  Text(
-                    catalog.name,
-                    textScaleFactor: 1.6,
-                    style: TextStyle(
-                      color: Mytheme.bluish,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    catalog.desc,
-                    textScaleFactor: 1.3,
-                  ),
-                  ButtonBar(
-                    buttonPadding: EdgeInsets.all(0),
-                    alignment: MainAxisAlignment.spaceBetween,
-                    children: [
                       Text(
-                        "\$${catalog.price.toString()}",
+                        catalog.name,
+                        textScaleFactor: 1.6,
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 23),
+                          color: Mytheme.bluish,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: ElevatedButton(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(Mytheme.bluish),
-                                shape:
-                                    MaterialStateProperty.all(StadiumBorder())),
-                            onPressed: () {},
-                            child: Text(
-                              "Buy",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20),
-                            )),
-                      )
-                    ],
-                  ),
-                ]))
+                      Text(
+                        catalog.desc,
+                        textScaleFactor: 1.3,
+                      ),
+                      ButtonBar(
+                        buttonPadding: EdgeInsets.all(0),
+                        alignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "\$${catalog.price.toString()}",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 23),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: ElevatedButton(
+                                style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                        Mytheme.bluish),
+                                    shape: MaterialStateProperty.all(
+                                        StadiumBorder())),
+                                onPressed: () {},
+                                child: Text(
+                                  "Buy",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20),
+                                )),
+                          )
+                        ],
+                      ),
+                    ]))
           ]),
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(20)),
@@ -186,7 +192,7 @@ class Imageapp extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Container(
-        width: 100,
+        // width: 150,
         padding: EdgeInsets.all(10),
         child: SizedBox(child: Image.network(image)),
         decoration: BoxDecoration(
