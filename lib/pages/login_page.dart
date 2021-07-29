@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).canvasColor,
         body: Form(
           key: _formKey,
           child: SingleChildScrollView(
@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Theme.of(context).accentColor,
                   ),
                 ),
                 Padding(
@@ -64,6 +64,9 @@ class _LoginPageState extends State<LoginPage> {
                     child: Column(
                       children: [
                         TextFormField(
+                          style: TextStyle(
+                            color: Theme.of(context).accentColor,
+                          ),
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "Username cannot be empty";
@@ -81,6 +84,9 @@ class _LoginPageState extends State<LoginPage> {
                           },
                         ),
                         TextFormField(
+                          style: TextStyle(
+                            color: Theme.of(context).accentColor,
+                          ),
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "Password cant be Empty";
@@ -101,7 +107,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Material(
                   borderRadius: BorderRadius.circular(changebutton ? 80 : 10),
-                  color: changebutton ? Colors.green : Colors.purple,
+                  color: changebutton
+                      ? Colors.green
+                      : Theme.of(context).buttonColor,
                   child: InkWell(
                     onTap: () => movetoHome(context),
                     child: AnimatedContainer(

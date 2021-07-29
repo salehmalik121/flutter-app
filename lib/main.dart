@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning/pages/cart.dart';
 // ignore: unused_import
 
 // ignore: unused_import
@@ -19,14 +20,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: Mytheme.lighttheme(context),
+      darkTheme: Mytheme.darktheme(context),
       initialRoute: "/",
       routes: {
         "/": (context) => HomePage(),
         Myroutes.homeRoute: (context) => HomePage(),
         Myroutes.loginRoute: (context) => LoginPage(),
         "test": (context) => test(),
+        Myroutes.cartRoute: (context) => Cart(),
       },
     );
   }
